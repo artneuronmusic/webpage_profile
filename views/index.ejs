@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <%- include("partials/head.ejs") %>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/header.ejs") %>
+    </header>
+    <main>
+        <%- include("partials/intro.ejs") %>
+        <%- include("partials/projects.ejs") %>
+        <%- include("partials/life.ejs") %>
+        <%- include("partials/about.ejs") %>
+        <%- include("partials/contact.ejs") %>
+        <%- include("partials/review.ejs") %>
+
+    
+    </main>
+
+
+
+
+
+<div class="b-example-divider"></div>
+<div class="container">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+<%- include("partials/footer.ejs") %>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- script for handling the edit review modal -->
+<script>
+    var editReviewModal = document.getElementById('editReviewModal');
+    editReviewModal.addEventListener('show.bs.modal', function (event){
+        var target = event.relatedTarget;//button will trigger the modal
+        var index = target.getAttribute('data-index');
+        var name = target.getAttribute('data-name');
+        var email = target.getAttribute('data-email');
+        var message = target.getAttribute('data-message');
+
+        var new_form = editReviewModal.querySelector("#editReviewForm");
+        new_form.action = '/edit/' + index;
+
+        new_form.querySelector("#editName").value = name;
+        new_form.querySelector("#editEmail").value = email;
+        new_form.querySelector("#editMessage").value = message;
+    })
+</script>
+<script>
+    var deleteReviewModal = document.getElementById('deleteReviewModal');
+    deleteReviewModal.addEventListener('show.bs.modal', function (event){
+        var target = event.relatedTarget;//button will trigger the modal
+        var index = target.getAttribute('data-index');
+        var name = target.getAttribute('data-name');
+
+        var delete_header = deleteReviewModal.querySelector("#deleteReviewModalLabel");
+        delete_header.textContent = "Hi " + name + ", ";
+        var delete_form = deleteReviewModal.querySelector("#deleteReviewForm");
+        delete_form.action='/delete/'+index;
+        delete_form.querySelector("#deleteIndex").value=index;
+
+       
+    })
+</script>
+
+
+</body>
+</html>

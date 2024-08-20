@@ -1,0 +1,47 @@
+<div class="'container" id="contact">
+    <div class="py-5 text-center">
+        <h2>Contact YC</h2>
+        <p class="lead col-lg-8 mx-auto fs-5 text-muted text-center">Wanna share your thought with me or help me to improve the website? WELCOME!!!
+            Looking forward to having a chance to communicate.Please leave your message in the below, I will respond as soon as I can.
+            </p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+
+    <form action="/contact" method="POST">
+        <div class="mb-3">
+            <label for="inputName" class="for-label" >Name</label>
+            <input  type="text" class="form-control" id="inputName" aria-describedby="inputName" name="inputName" autocomplete="name" required>
+        </div>
+        <div class="mb-3">
+            <!-- should not be shown but need to be saved into database like others-->
+            <label for="inputEmail" class="for-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail" name="inputEmail" autocomplete="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="inputMessage" class="for-label">Message</label>
+            <div class="firm-floating">
+            
+            <textarea class="form-control" id="inputMessage" aria-describedby="inputMessage" placeholder="Comments" style="height: 200px;" name="inputMessage" autocomplete="message" required></textarea>
+        </div>
+        </div>
+        <!-- <div class="mb-3" >
+            <label for="message" class="for-label">Review Rating</label>
+            <br>
+            <form>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+               
+            </form>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+       
+        
+    </form>
+</div>
+</div>
+</div>
